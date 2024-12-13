@@ -14,7 +14,7 @@
             findlib
             ocaml
             ocamlformat
-            ocamllsp
+            ocaml-lsp
             odoc
             utop
 
