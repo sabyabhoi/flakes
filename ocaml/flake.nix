@@ -10,11 +10,13 @@
         devShell = pkgs.mkShell { 
           name = "ocaml-devshell";
           buildInputs = with pkgs.ocamlPackages; [
-            ocaml
             dune_3
             findlib
-            utop
+            ocaml
+            ocamlformat
+            ocamllsp
             odoc
+            utop
 
             janeStreet.base
             janeStreet.stdio
