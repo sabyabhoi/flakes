@@ -5,6 +5,9 @@
     { ... }:
     {
       templates = {
+        python = {
+          path = ./python;
+        };
         ocaml = {
           path = ./ocaml;
         };
