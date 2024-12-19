@@ -5,6 +5,9 @@
     { ... }:
     {
       templates = {
+        elixir = {
+          path = ./elixir;
+        };
         python = {
           path = ./python;
         };
