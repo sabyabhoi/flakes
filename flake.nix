@@ -5,6 +5,9 @@
     { ... }:
     {
       templates = {
+        php-laravel = {
+          path = ./php-laravel;
+        };
         elixir = {
           path = ./elixir;
         };
