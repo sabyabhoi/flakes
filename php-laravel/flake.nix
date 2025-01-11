@@ -8,9 +8,10 @@
         pkgs.mkShell {
           name = "basic-flake";
           buildInputs = with pkgs; [
-            php
-            laravel
             bun
+            laravel
+            php
+            php83Packages.composer
           ];
         };
        shellhook = '' '';
