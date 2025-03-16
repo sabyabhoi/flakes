@@ -1,19 +1,26 @@
 {
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs"; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
 
-  outputs = { self, nixpkgs }:
-    let pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    in {
-      devShell.x86_64-linux =
-        pkgs.mkShell {
-          name = "basic-flake";
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        devShell = pkgs.mkShell {
+          name = "php-laravel-flake";
           buildInputs = with pkgs; [
             bun
             laravel
             php
             php83Packages.composer
           ];
+          shellHook = ''
+            echo "php-laravel-flake initialized"
+          '';
         };
-       shellhook = '' '';
-   };
+      }
+    );
 }
