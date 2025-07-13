@@ -23,6 +23,9 @@
         rust = {
           path = ./rust;
         };
+        java = {
+          path = ./java;
+        };
       };
     };
 }
