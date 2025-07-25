@@ -26,6 +26,9 @@
         java = {
           path = ./java;
         };
+        node = {
+          path = ./node;
+        };
       };
     };
 }
