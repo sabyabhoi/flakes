@@ -8,13 +8,13 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        pythonPackages = pkgs.python311Packages;
+        pythonPackages = pkgs.python313Packages;
       in
       {
         devShells.default = pkgs.mkShell {
           name = "python-devel";
-          venvDir = "venv";
-          buildInputs = with pythonPackages; [
+          venvDir = ".venv";
+          buildInputs = (with pythonPackages; [
             pandas
             numpy
             scipy
@@ -23,7 +23,7 @@
             venvShellHook
             seaborn
             pyarrow
-          ];
+          ]) ++ (with pkgs; [uv]);
         };
       }
     );
