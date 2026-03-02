@@ -29,6 +29,9 @@
         node = {
           path = ./node;
         };
+        c = {
+          path = ./c;
+        };
       };
     };
 }
